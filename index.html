@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RUET ME'24 — Section C</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Serif+Display&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #FFF5EB;
+      --text: #232323;
+      --outline: #fbebcb;
+      --accent: #d3956b;
+      --card-shadow: 0 4px 24px rgba(78,78,78,0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Playfair Display', Georgia, serif;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 36px 24px 28px;
+      border-bottom: 1.5px solid var(--outline);
+    }
+
+    .site-header img {
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title-wrap {
+      text-align: center;
+      padding: 52px 24px 16px;
+      position: relative;
+    }
+
+    .section-title-wrap h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title-wrap h1::after {
+      content: '';
+      display: block;
+      margin: 12px auto 0;
+      width: 60%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--outline), var(--accent), var(--outline), transparent);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      margin-top: 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.85;
+    }
+
+    /* ── GRID ── */
+    .cards-section {
+      padding: 44px 40px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 32px 28px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--bg);
+      border: 1.5px solid var(--outline);
+      border-radius: 18px;
+      padding: 32px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 36px rgba(78,78,78,0.13);
+    }
+
+    .card-photo-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--outline);
+      box-shadow: 0 2px 12px rgba(212,149,106,0.18);
+      flex-shrink: 0;
+    }
+
+    .card-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-name {
+      font-family: 'Times New Roman', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+      margin-top: 4px;
+    }
+
+    .card-id {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .card-college {
+      font-family: 'Calibri', sans-serif;
+      font-size: 0.82rem;
+      color: var(--text);
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .card-socials {
+      display: flex;
+      gap: 14px;
+      margin-top: 6px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--outline);
+      background: #fff9f3;
+      transition: background 0.18s, border-color 0.18s, transform 0.18s;
+    }
+
+    .card-socials a:hover {
+      background: var(--outline);
+      border-color: var(--accent);
+      transform: scale(1.12);
+    }
+
+    .card-socials a img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    /* ── FOOTER / ADDRESS ── */
+    .address-section {
+      background-color: var(--text);
+      color: var(--bg);
+      font-family: 'Nunito', sans-serif;
+      padding: 56px 40px 48px;
+      text-align: center;
+    }
+
+    .address-section .footer-logo {
+      max-height: 56px;
+      width: auto;
+      opacity: 0.9;
+      margin-bottom: 24px;
+      filter: brightness(0) invert(1) sepia(0.2);
+    }
+
+    .address-section h2 {
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      opacity: 0.6;
+      font-weight: 600;
+    }
+
+    .address-section .address-body {
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.9;
+      font-size: 0.97rem;
+      font-weight: 300;
+    }
+
+    .address-section .address-body strong {
+      font-weight: 600;
+    }
+
+    .address-section .divider {
+      width: 48px;
+      height: 1.5px;
+      background: var(--outline);
+      margin: 20px auto;
+      opacity: 0.45;
+      border-radius: 2px;
+    }
+
+    .address-section a {
+      color: var(--outline);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.15s;
+    }
+
+    .address-section a:hover {
+      opacity: 0.75;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      margin-top: 28px;
+      font-size: 0.78rem;
+      opacity: 0.35;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .cards-section {
+        padding: 32px 18px 48px;
+      }
+      .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 22px 16px;
+      }
+      .address-section {
+        padding: 44px 22px 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header">
+    <img src="ruetme24logo.png" alt="RUET ME'24 Logo" />
+  </header>
+
+  <!-- ── SECTION TITLE ── -->
+  <div class="section-title-wrap">
+    <h1>Section C</h1>
+    <p class="section-subtitle">Department of Mechanical Engineering · RUET · 2024 Series</p>
+  </div>
+
+  <!-- ── CARDS ── -->
+  <main class="cards-section">
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-photo-wrap">
+          <img src="roll.jpg" 
+          onerror="this.onerror=null; this.src='alternative_photo.png';" 
+          alt="Student's Photo">
+        </div>
+        <div class="card-name">Student's Name</div>
+        <div class="card-id">ID 2402XXX</div>
+        <div class="card-college">(College), (College Address)</div>
+        <div class="card-socials">
+          <a href="https://www.facebook.com/profile" target="_blank" rel="noopener" title="Facebook">
+            <img src="facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://wa.me/01XXXXXXXX" target="_blank" rel="noopener" title="WhatsApp">
+            <img src="whatsapp.png" alt="WhatsApp" />
+          </a>
+        </div>
+      </div>
+
+      <!-- ↑ Duplicate cards as needed ↑ -->
+
+    </div>
+  </main>
+
+  <!-- ── ADDRESS SECTION ── -->
+  <footer class="address-section">
+    <img src="ruetme24logo.png" alt="RUET ME'24 Logo" class="footer-logo" />
+    <h2>Contact &amp; Address</h2>
+    <div class="address-body">
+      <strong>Department of Mechanical Engineering</strong><br />
+      Rajshahi University of Engineering &amp; Technology (RUET)<br />
+      Kazla, Rajshahi-6204, Bangladesh
+    </div>
+    <div class="divider"></div>
+    <div class="address-body">
+      <strong>Email:</strong>
+      <a href="mailto:ruet.me24c@gmail.com">ruet.me24@gmail.com</a>
+    </div>
+    <div class="address-body">
+      <strong>Facebook:</strong>
+      <a href="https://facebook.com/ruetme24" target="_blank" rel="noopener">
+        facebook.com/ruetme24
+      </a>
+    </div>
+    <div class="footer-bottom">© 2024 RUET ME'24 Section C. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
