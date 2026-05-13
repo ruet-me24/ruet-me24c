@@ -277,116 +277,6 @@
         padding: 44px 22px 36px;
       }
     }
-
-    /* ── MODAL OVERLAY ── */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(35, 35, 35, 0.55);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    .modal-overlay.active { display: flex; }
-
-    /* ── MODAL BOX ── */
-    .modal {
-      background: var(--bg);
-      border: 1.5px solid var(--outline);
-      border-radius: 22px;
-      padding: 44px 36px 36px;
-      max-width: 380px;
-      width: 100%;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 20px 60px rgba(78,78,78,0.22);
-      animation: modalIn 0.22s ease;
-    }
-    @keyframes modalIn {
-      from { transform: scale(0.92); opacity: 0; }
-      to   { transform: scale(1);    opacity: 1; }
-    }
-    .modal-close {
-      position: absolute;
-      top: 14px;
-      right: 18px;
-      background: none;
-      border: none;
-      font-size: 1.3rem;
-      cursor: pointer;
-      color: var(--text);
-      opacity: 0.45;
-      transition: opacity 0.15s;
-      line-height: 1;
-    }
-    .modal-close:hover { opacity: 1; }
-    .modal-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--outline);
-      box-shadow: 0 4px 16px rgba(212,149,106,0.2);
-      margin-bottom: 16px;
-    }
-    .modal-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 5px;
-      line-height: 1.3;
-    }
-    .modal-id {
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.88rem;
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      margin-bottom: 8px;
-    }
-    .modal-divider {
-      width: 40px;
-      height: 1.5px;
-      background: var(--outline);
-      margin: 12px auto;
-      border-radius: 2px;
-    }
-    .modal-college {
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.88rem;
-      color: var(--text);
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-    .modal-socials {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-    }
-    .modal-socials a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1.5px solid var(--outline);
-      background: #fff9f3;
-      transition: background 0.18s, border-color 0.18s, transform 0.18s;
-    }
-    .modal-socials a:hover {
-      background: var(--outline);
-      border-color: var(--accent);
-      transform: scale(1.1);
-    }
-    .modal-socials a img {
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-    }
   </style>
 </head>
 <body>
@@ -408,7 +298,7 @@
 
 
       <!-- 2402121 -->
-      <div class="card" onclick="openModal('S. M. Naeem','ID 2402121','St. Joseph\'s School and College, Natore','2402121.jpg','https://www.facebook.com/share/1DYtPD99Yt/','https://wa.me/8801722675664','naeemsheikh331426@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402121.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -418,20 +308,20 @@
         <div class="card-id">ID 2402121</div>
         <div class="card-college">St. Joseph's School and College, Natore</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1DYtPD99Yt/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1DYtPD99Yt/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801722675664" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801722675664" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:naeemsheikh331426@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:naeemsheikh331426@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402122 -->
-      <div class="card" onclick="openModal('Shahriar Azim','ID 2402122','Dinajpur Government College, Dinajpur','2402122.jpg','https://www.facebook.com/share/1F95fwT4bi/','https://wa.me/8801956282666','azimshahriar104@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402122.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -441,20 +331,20 @@
         <div class="card-id">ID 2402122</div>
         <div class="card-college">Dinajpur Government College, Dinajpur</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1F95fwT4bi/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1F95fwT4bi/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801956282666" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801956282666" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:azimshahriar104@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:azimshahriar104@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402123 -->
-      <div class="card" onclick="openModal('Md Mostafa Mursheed Sarker Rumi','ID 2402123','Lions School & College, Rangpur','2402123.jpg','https://www.facebook.com/mustafamursheedsarker','https://wa.me/8801981221162','mustafamursheed242@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402123.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -464,20 +354,20 @@
         <div class="card-id">ID 2402123</div>
         <div class="card-college">Lions School & College, Rangpur</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/mustafamursheedsarker" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/mustafamursheedsarker" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801981221162" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801981221162" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mustafamursheed242@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mustafamursheed242@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402124 -->
-      <div class="card" onclick="openModal('Israk Mustakim Islam','ID 2402124','Notre Dame College, Dhaka','2402124.jpg','https://www.facebook.com/israk.m','https://wa.me/8801822967001','israk.mustakim@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <span class="tag">DEVELOPER</span>
         <div class="card-photo-wrap">
           <img src="2402124.jpg"
@@ -488,20 +378,20 @@
         <div class="card-id">ID 2402124</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/israk.m" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/israk.m" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801822967001" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801822967001" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:israk.mustakim@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:israk.mustakim@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402125 -->
-      <div class="card" onclick="openModal('Md Soyaif Sarker Siam','ID 2402125','Govt. Shah Sultan College, Bogura','2402125.jpg','https://www.facebook.com/share/1Cr921fiW8/?mibextid=wwXIfr','https://wa.me/8801303478800','sssiam0427@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402125.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -511,20 +401,20 @@
         <div class="card-id">ID 2402125</div>
         <div class="card-college">Govt. Shah Sultan College, Bogura</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1Cr921fiW8/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1Cr921fiW8/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801303478800" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801303478800" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:sssiam0427@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:sssiam0427@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402126 -->
-      <div class="card" onclick="openModal('Md. Tanvir Hossain','ID 2402126','Government Science College, Dhaka','2402126.jpg','https://www.facebook.com/ro.b.in.57402','https://wa.me/8801738462722','2402126@student.ruet.ac.bd')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402126.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -534,20 +424,20 @@
         <div class="card-id">ID 2402126</div>
         <div class="card-college">Government Science College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/ro.b.in.57402" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/ro.b.in.57402" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801738462722" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801738462722" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:2402126@student.ruet.ac.bd" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:2402126@student.ruet.ac.bd" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402127 -->
-      <div class="card" onclick="openModal('Arup Ratan Gharami','ID 2402127','Notre Dame College, Dhaka','2402127.jpg','https://www.facebook.com/share/1k7XYWaarA/','https://wa.me/8801816795134','gharamiarup03@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402127.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -557,20 +447,20 @@
         <div class="card-id">ID 2402127</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1k7XYWaarA/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1k7XYWaarA/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801816795134" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801816795134" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:gharamiarup03@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:gharamiarup03@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402128 -->
-      <div class="card" onclick="openModal('Sabit Rahman','ID 2402128','Govt. Michael Madhusudan College, Jashore','2402128.jpg','https://www.facebook.com/share/1AVPwBMo7m/','https://wa.me/8801975725115','rsabit782@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402128.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -580,20 +470,20 @@
         <div class="card-id">ID 2402128</div>
         <div class="card-college">Govt. Michael Madhusudan College, Jashore</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1AVPwBMo7m/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1AVPwBMo7m/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801975725115" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801975725115" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:rsabit782@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:rsabit782@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402129 -->
-      <div class="card" onclick="openModal('Rafiul Islam Sharup','ID 2402129','Savar Cantonment Public School And College, Savar, Dhaka','2402129.jpg','https://www.facebook.com/share/1EDPLEcuf1/','https://wa.me/8801621819007','sharuprafiul@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402129.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -603,20 +493,20 @@
         <div class="card-id">ID 2402129</div>
         <div class="card-college">Savar Cantonment Public School And College, Savar, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1EDPLEcuf1/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1EDPLEcuf1/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801621819007" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801621819007" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:sharuprafiul@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:sharuprafiul@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402130 -->
-      <div class="card" onclick="openModal('Wahidur Rahman Mahi','ID 2402130','Rajshahi Shahid Buddhijibi College, Rajshahi','2402130.jpg','https://www.facebook.com/share/1KcsGVkA5u/','https://wa.me/8801320772319','wrmahi1@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402130.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -626,20 +516,20 @@
         <div class="card-id">ID 2402130</div>
         <div class="card-college">Rajshahi Shahid Buddhijibi College, Rajshahi</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1KcsGVkA5u/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1KcsGVkA5u/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801320772319" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801320772319" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:wrmahi1@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:wrmahi1@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402131 -->
-      <div class="card" onclick="openModal('Monmohan Barua','ID 2402131','Notre Dame College, Dhaka','2402131.jpg','https://www.facebook.com/monmohan.barua.2025','https://wa.me/8801909899449','mohanruet2025@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402131.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -649,20 +539,20 @@
         <div class="card-id">ID 2402131</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/monmohan.barua.2025" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/monmohan.barua.2025" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801909899449" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801909899449" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mohanruet2025@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mohanruet2025@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402132 -->
-      <div class="card" onclick="openModal('Rohit Dutta','ID 2402132','Govt. Sundarban Adarsha College, Khulna','2402132.jpg','https://www.facebook.com/share/1HkzAEZXey/','https://wa.me/8801859169019','rd.rohitdutta04@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402132.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -672,20 +562,20 @@
         <div class="card-id">ID 2402132</div>
         <div class="card-college">Govt. Sundarban Adarsha College, Khulna</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1HkzAEZXey/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1HkzAEZXey/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801859169019" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801859169019" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:rd.rohitdutta04@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:rd.rohitdutta04@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402133 -->
-      <div class="card" onclick="openModal('Oyshi Chakrovortty','ID 2402133','Holy Cross College, Dhaka','2402133.jpg','https://m.me/rosa.alba.l','https://wa.me/8801987836561','oyshichakrovortty@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402133.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -695,20 +585,20 @@
         <div class="card-id">ID 2402133</div>
         <div class="card-college">Holy Cross College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://m.me/rosa.alba.l" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://m.me/rosa.alba.l" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801987836561" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801987836561" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:oyshichakrovortty@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:oyshichakrovortty@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402134 -->
-      <div class="card" onclick="openModal('Syed Afridi Hassan','ID 2402134','Dhaka City College, Dhaka','2402134.jpg','https://www.facebook.com/share/1BDt72igbf/','https://wa.me/8801888380013','syedafridi2004@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402134.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -718,20 +608,20 @@
         <div class="card-id">ID 2402134</div>
         <div class="card-college">Dhaka City College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1BDt72igbf/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1BDt72igbf/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801888380013" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801888380013" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:syedafridi2004@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:syedafridi2004@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402135 -->
-      <div class="card" onclick="openModal('Md. Raian Haque','ID 2402135','Parbatipur Adarsha Degree College, Dinajpur','2402135.jpg','https://www.facebook.com/share/1GvWFQntN5/','https://wa.me/8801328634353','raianruet24me@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402135.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -741,20 +631,20 @@
         <div class="card-id">ID 2402135</div>
         <div class="card-college">Parbatipur Adarsha Degree College, Dinajpur</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1GvWFQntN5/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1GvWFQntN5/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801328634353" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801328634353" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:raianruet24me@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:raianruet24me@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402136 -->
-      <div class="card" onclick="openModal('Mashruk Hasnine','ID 2402136','Khulna Public College','2402136.jpg','https://www.facebook.com/share/18d7mkNp28/','https://wa.me/8801757744284','mashrukhasnine10@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402136.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -764,20 +654,20 @@
         <div class="card-id">ID 2402136</div>
         <div class="card-college">Khulna Public College</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/18d7mkNp28/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/18d7mkNp28/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801757744284" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801757744284" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mashrukhasnine10@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mashrukhasnine10@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402137 -->
-      <div class="card" onclick="openModal('Akib Al Hasan','ID 2402137','Birshreshtho Noor Mohammad Public College, Peelkhana, Dhaka','2402137.jpg','https://www.facebook.com/share/1KWxkatQ9m/?mibextid=wwXIfr','https://wa.me/8801985331936','akibalhasan010@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402137.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -787,20 +677,20 @@
         <div class="card-id">ID 2402137</div>
         <div class="card-college">Birshreshtho Noor Mohammad Public College, Peelkhana, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1KWxkatQ9m/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1KWxkatQ9m/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801985331936" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801985331936" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:akibalhasan010@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:akibalhasan010@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402138 -->
-      <div class="card" onclick="openModal('Oishick Mazumder','ID 2402138','Notre Dame College, Dhaka','2402138.jpg','https://www.facebook.com/share/18aRh2kZUa/','https://wa.me/8801752037127','oishickmazumder@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402138.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -810,20 +700,20 @@
         <div class="card-id">ID 2402138</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/18aRh2kZUa/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/18aRh2kZUa/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801752037127" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801752037127" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:oishickmazumder@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:oishickmazumder@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402139 -->
-      <div class="card" onclick="openModal('Md. Kayes Ibna Ali','ID 2402139','Government Science College, Dhaka','2402139.jpg','https://www.facebook.com/profile.php?id=61581686356923','https://wa.me/8801795199474','kayes.dsblsc@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402139.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -833,20 +723,20 @@
         <div class="card-id">ID 2402139</div>
         <div class="card-college">Government Science College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/profile.php?id=61581686356923" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/profile.php?id=61581686356923" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801795199474" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801795199474" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:kayes.dsblsc@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:kayes.dsblsc@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402140 -->
-      <div class="card" onclick="openModal('Raida Tahsin','ID 2402140','Muminunnisa Govt. Mohila College, Mymensingh','2402140.jpg','https://www.facebook.com/share/1G22UGjn8R/','https://wa.me/8801764317160','raidatahsin34@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402140.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -856,20 +746,20 @@
         <div class="card-id">ID 2402140</div>
         <div class="card-college">Muminunnisa Govt. Mohila College, Mymensingh</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1G22UGjn8R/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1G22UGjn8R/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801764317160" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801764317160" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:raidatahsin34@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:raidatahsin34@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402141 -->
-      <div class="card" onclick="openModal('Tahsin Ahmed Chowdhury','ID 2402141','Dr Mahbubur Rahman Mollah College, Dhaka','2402141.jpg','https://www.facebook.com/share/18gY2V4b2y/','https://wa.me/8801613506327','tahsinchowdhury73@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402141.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -879,20 +769,20 @@
         <div class="card-id">ID 2402141</div>
         <div class="card-college">Dr Mahbubur Rahman Mollah College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/18gY2V4b2y/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/18gY2V4b2y/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801613506327" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801613506327" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:tahsinchowdhury73@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:tahsinchowdhury73@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402142 -->
-      <div class="card" onclick="openModal('Md. Rakib Hossain','ID 2402142','Bogura Cantonment Public School and College, Bogura','2402142.jpg','https://www.facebook.com/share/1B6m1cDaPe/','https://wa.me/8801717537504','rakibhossain77200@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402142.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -902,20 +792,20 @@
         <div class="card-id">ID 2402142</div>
         <div class="card-college">Bogura Cantonment Public School and College, Bogura</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1B6m1cDaPe/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1B6m1cDaPe/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801717537504" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801717537504" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:rakibhossain77200@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:rakibhossain77200@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402143 -->
-      <div class="card" onclick="openModal('Md. Fahad Foysal Mondol','ID 2402143','Sirajganj Govt. College, Sirajganj','2402143.jpg','https://www.facebook.com/dm.fahad.12','https://wa.me/8801409830263','fahad.foysal08377@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402143.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -925,20 +815,20 @@
         <div class="card-id">ID 2402143</div>
         <div class="card-college">Sirajganj Govt. College, Sirajganj</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/dm.fahad.12" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/dm.fahad.12" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801409830263" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801409830263" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:fahad.foysal08377@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:fahad.foysal08377@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402144 -->
-      <div class="card" onclick="openModal('Ahsanul Hoque Ratul','ID 2402144','BPATC School and College, Savar, Dhaka','2402144.jpg','https://www.facebook.com/share/1DEFjeFDHL/','https://wa.me/8801642471316','ratulahsanul36@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402144.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -948,20 +838,20 @@
         <div class="card-id">ID 2402144</div>
         <div class="card-college">BPATC School and College, Savar, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1DEFjeFDHL/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1DEFjeFDHL/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801642471316" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801642471316" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:ratulahsanul36@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:ratulahsanul36@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402145 -->
-      <div class="card" onclick="openModal('Mst. Lubna Akter Mim','ID 2402145','New Govt. Degree College, Rajshahi','2402145.jpg','https://www.facebook.com/share/1CzEhE4Fw5/','https://wa.me/8801339478150','lubnaaktermim228@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402145.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -971,20 +861,20 @@
         <div class="card-id">ID 2402145</div>
         <div class="card-college">New Govt. Degree College, Rajshahi</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1CzEhE4Fw5/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1CzEhE4Fw5/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801339478150" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801339478150" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:lubnaaktermim228@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:lubnaaktermim228@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402146 -->
-      <div class="card" onclick="openModal('Md. Sharif Ullah','ID 2402146','Chittagong College, Chattogram','2402146.jpg','https://www.facebook.com/sharif.ullah.sifat','https://wa.me/8801837207627','sharifullahsifat137@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402146.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -994,20 +884,20 @@
         <div class="card-id">ID 2402146</div>
         <div class="card-college">Chittagong College, Chattogram</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/sharif.ullah.sifat" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/sharif.ullah.sifat" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801837207627" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801837207627" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:sharifullahsifat137@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:sharifullahsifat137@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402147 -->
-      <div class="card" onclick="openModal('Md Ali Muntarin','ID 2402147','Notre Dame College, Dhaka','2402147.jpg','https://www.facebook.com/share/1NK7g2SLz7/?mibextid=wwXIfr','https://wa.me/8801877377682','muntarin25@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <span class="tag">CLASS REPRESENTATIVE</span>
         <div class="card-photo-wrap">
           <img src="2402147.jpg"
@@ -1018,20 +908,20 @@
         <div class="card-id">ID 2402147</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1NK7g2SLz7/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1NK7g2SLz7/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801877377682" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801877377682" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:muntarin25@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:muntarin25@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402148 -->
-      <div class="card" onclick="openModal('Mst. Shirin Mahmuda Meherin','ID 2402148','Rajshahi Government City College, Rajshahi','2402148.jpg','https://www.facebook.com/abdullahal.mezba','https://wa.me/8801782714319','masudkabir197070@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402148.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1041,20 +931,20 @@
         <div class="card-id">ID 2402148</div>
         <div class="card-college">Rajshahi Government City College, Rajshahi</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/abdullahal.mezba" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/abdullahal.mezba" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801782714319" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801782714319" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:masudkabir197070@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:masudkabir197070@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402149 -->
-      <div class="card" onclick="openModal('Md. Julfikar Mahmud','ID 2402149','Kushtia Government College, Kushtia','2402149.jpg','https://www.facebook.com/share/18fuS3NCwn/','https://wa.me/8801747633598','julfikarmahmud6@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402149.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1064,20 +954,20 @@
         <div class="card-id">ID 2402149</div>
         <div class="card-college">Kushtia Government College, Kushtia</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/18fuS3NCwn/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/18fuS3NCwn/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801747633598" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801747633598" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:julfikarmahmud6@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:julfikarmahmud6@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402150 -->
-      <div class="card" onclick="openModal('Mahia Muntaha','ID 2402150','Muminunnisa Govt. Women\'s College, Mymensingh','2402150.jpg','https://www.facebook.com/share/1Hkzecq8WR/','https://wa.me/8801712887788','mahiamuntaha24@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402150.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1087,20 +977,20 @@
         <div class="card-id">ID 2402150</div>
         <div class="card-college">Muminunnisa Govt. Women's College, Mymensingh</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1Hkzecq8WR/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1Hkzecq8WR/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801712887788" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801712887788" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mahiamuntaha24@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mahiamuntaha24@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402151 -->
-      <div class="card" onclick="openModal('Md. Salman Ahmmed','ID 2402151','Dhaka Imperial College, Dhaka','2402151.jpg','https://www.facebook.com/share/1BMDgvcwaM/','https://wa.me/8801516542540','salmanahmmed017@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402151.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1110,20 +1000,20 @@
         <div class="card-id">ID 2402151</div>
         <div class="card-college">Dhaka Imperial College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1BMDgvcwaM/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1BMDgvcwaM/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801516542540" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801516542540" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:salmanahmmed017@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:salmanahmmed017@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402152 -->
-      <div class="card" onclick="openModal('Abdullah Al-Nahian Rusho','ID 2402152','Notre Dame College, Dhaka','2402152.jpg','https://www.facebook.com/share/1CpPPuWwQK/','https://wa.me/8801533888911','nahianrusho@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402152.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1133,20 +1023,20 @@
         <div class="card-id">ID 2402152</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1CpPPuWwQK/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1CpPPuWwQK/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801533888911" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801533888911" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:nahianrusho@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:nahianrusho@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402153 -->
-      <div class="card" onclick="openModal('Sabiha Binte Mostafa','ID 2402153','Hazaribagh Govt. College, Dhaka','2402153.jpg','https://www.facebook.com/share/1B3AdPnEpU/','https://wa.me/8801531487209','sabihanium@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402153.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1156,20 +1046,20 @@
         <div class="card-id">ID 2402153</div>
         <div class="card-college">Hazaribagh Govt. College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1B3AdPnEpU/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1B3AdPnEpU/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801531487209" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801531487209" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:sabihanium@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:sabihanium@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402154 -->
-      <div class="card" onclick="openModal('Md Afeef Al Adil','ID 2402154','The Millennium Stars School And College, Rangpur Cantonment','2402154.jpg','https://www.facebook.com/share/1Gb3vuf75N/','https://wa.me/8801316408443','afeef.ruet@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402154.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1179,20 +1069,20 @@
         <div class="card-id">ID 2402154</div>
         <div class="card-college">The Millennium Stars School And College, Rangpur Cantonment</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1Gb3vuf75N/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1Gb3vuf75N/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801316408443" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801316408443" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:afeef.ruet@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:afeef.ruet@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402155 -->
-      <div class="card" onclick="openModal('Md Nafiz Ahmed Khan','LEFT RUET','Notre Dame College, Dhaka','2402155.jpg','https://www.facebook.com/nafiz.ahmed.khan.950883','https://wa.me/8801944746960','nafizahmedkhan420@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402155.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1202,20 +1092,20 @@
         <div class="card-id">LEFT RUET</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/nafiz.ahmed.khan.950883" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/nafiz.ahmed.khan.950883" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801944746960" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801944746960" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:nafizahmedkhan420@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:nafizahmedkhan420@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402156 -->
-      <div class="card" onclick="openModal('Ripon Islam','ID 2402156','Nilphamari Government College, Nilphamari','2402156.jpg','https://www.facebook.com/profile.php?id=100072608064573','https://wa.me/8801308122050','acripon8922@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402156.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1225,20 +1115,20 @@
         <div class="card-id">ID 2402156</div>
         <div class="card-college">Nilphamari Government College, Nilphamari</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/profile.php?id=100072608064573" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/profile.php?id=100072608064573" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801308122050" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801308122050" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:acripon8922@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:acripon8922@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402157 -->
-      <div class="card" onclick="openModal('Hossain Md Muhimenul Islam','ID 2402157','Cant. Public School and College, Parbatipur, Dinajpur','2402157.jpg','https://www.facebook.com/m.muhimenul.islam.hredoy','https://wa.me/8801845248397','muhymenulhredoy@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402157.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1248,20 +1138,20 @@
         <div class="card-id">ID 2402157</div>
         <div class="card-college">Cant. Public School and College, Parbatipur, Dinajpur</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/m.muhimenul.islam.hredoy" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/m.muhimenul.islam.hredoy" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801845248397" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801845248397" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:muhymenulhredoy@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:muhymenulhredoy@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402158 -->
-      <div class="card" onclick="openModal('Wasif Alahi','ID 2402158','Notre Dame College, Dhaka','2402158.jpg','https://www.facebook.com/wasif.arko.2024','https://wa.me/8801707336361','wasif113arko@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <span class="tag">CLASS REPRESENTATIVE</span>
         <div class="card-photo-wrap">
           <img src="2402158.jpg"
@@ -1272,20 +1162,20 @@
         <div class="card-id">ID 2402158</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/wasif.arko.2024" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/wasif.arko.2024" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801707336361" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801707336361" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:wasif113arko@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:wasif113arko@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402159 -->
-      <div class="card" onclick="openModal('Md. Shafayet Hossain','ID 2402159','New Govt. Degree College, Rajshahi','2402159.jpg','https://www.facebook.com/share/183KYuLxxU/','https://wa.me/8801764722079','mdshafayethossain799@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402159.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1295,20 +1185,20 @@
         <div class="card-id">ID 2402159</div>
         <div class="card-college">New Govt. Degree College, Rajshahi</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/183KYuLxxU/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/183KYuLxxU/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801764722079" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801764722079" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mdshafayethossain799@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mdshafayethossain799@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402160 -->
-      <div class="card" onclick="openModal('Shihabur Rahman Siam','ID 2402160','Govt. Shah Sultan College, Bogura','2402160.jpg','https://www.facebook.com/profile.php?id=61583798106849','https://wa.me/8801334963241','skbogura25@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402160.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1318,20 +1208,20 @@
         <div class="card-id">ID 2402160</div>
         <div class="card-college">Govt. Shah Sultan College, Bogura</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/profile.php?id=61583798106849" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/profile.php?id=61583798106849" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801334963241" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801334963241" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:skbogura25@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:skbogura25@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402161 -->
-      <div class="card" onclick="openModal('Jawad Ihram','ID 2402161','Dhaka Residential Model College, Dhaka','2402161.jpg','https://www.facebook.com/share/1Qj1Br48ct/?mibextid=wwXIfr','https://wa.me/8801976835633','ihram.jawad@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402161.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1341,20 +1231,20 @@
         <div class="card-id">ID 2402161</div>
         <div class="card-college">Dhaka Residential Model College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1Qj1Br48ct/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1Qj1Br48ct/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801976835633" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801976835633" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:ihram.jawad@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:ihram.jawad@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402162 -->
-      <div class="card" onclick="openModal('Md. Maruf Munawar','ID 2402162','Cantonment College Jashore','2402162.jpg','https://www.facebook.com/share/1Domd4ZZqb/','https://wa.me/8801912078013','marufmunawarjsr@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402162.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1364,20 +1254,20 @@
         <div class="card-id">ID 2402162</div>
         <div class="card-college">Cantonment College Jashore</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1Domd4ZZqb/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1Domd4ZZqb/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801912078013" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801912078013" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:marufmunawarjsr@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:marufmunawarjsr@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402163 -->
-      <div class="card" onclick="openModal('Ankan Sannamat','ID 2402163','Govt. Sayed Hatem Ali College, Barishal','2402163.jpg','https://www.facebook.com/share/1L2maCsSuj/','https://wa.me/8801968586031','ankansannamat26@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402163.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1387,20 +1277,20 @@
         <div class="card-id">ID 2402163</div>
         <div class="card-college">Govt. Sayed Hatem Ali College, Barishal</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1L2maCsSuj/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1L2maCsSuj/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801968586031" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801968586031" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:ankansannamat26@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:ankansannamat26@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402164 -->
-      <div class="card" onclick="openModal('Mobinul Islam','ID 2402164','Rajuk Uttara Model College, Uttara, Dhaka','2402164.jpg','https://www.facebook.com/mobinul.islam.271841/','https://wa.me/8801622800083','mobinul3586@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402164.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1410,20 +1300,20 @@
         <div class="card-id">ID 2402164</div>
         <div class="card-college">Rajuk Uttara Model College, Uttara, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/mobinul.islam.271841/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/mobinul.islam.271841/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801622800083" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801622800083" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mobinul3586@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mobinul3586@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402165 -->
-      <div class="card" onclick="openModal('Sushmoy Chakraborty Mugdha','ID 2402165','Notre Dame College, Dhaka','2402165.jpg','https://www.facebook.com/share/1HVDBcQjf6/','https://wa.me/8801629949955','scmugdha117@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402165.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1433,20 +1323,20 @@
         <div class="card-id">ID 2402165</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1HVDBcQjf6/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1HVDBcQjf6/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801629949955" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801629949955" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:scmugdha117@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:scmugdha117@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402166 -->
-      <div class="card" onclick="openModal('Utswa Chandra Roy','ID 2402166','Notre Dame College, Dhaka','2402166.jpg','https://www.facebook.com/share/1BQCikFvuc/','https://wa.me/8801716008202','utswaroy57@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402166.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1456,20 +1346,20 @@
         <div class="card-id">ID 2402166</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1BQCikFvuc/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1BQCikFvuc/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801716008202" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801716008202" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:utswaroy57@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:utswaroy57@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402167 -->
-      <div class="card" onclick="openModal('Md. Amin Uddin Shimul','ID 2402167','Adamjee Cantonment College, Dhaka','2402167.jpg','https://www.facebook.com/share/1E4DDaTyS5/?mibextid=wwXIfr','https://wa.me/8801884244566','aminuddinshimul@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402167.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1479,20 +1369,20 @@
         <div class="card-id">ID 2402167</div>
         <div class="card-college">Adamjee Cantonment College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1E4DDaTyS5/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1E4DDaTyS5/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801884244566" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801884244566" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:aminuddinshimul@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:aminuddinshimul@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402168 -->
-      <div class="card" onclick="openModal('Sohag Rana','ID 2402168','Pirganj Govt College, Thakurgaon','2402168.jpg','https://www.facebook.com/share/1J8McVHJQE/','https://wa.me/8801792789010','mdsohagrana99887765@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402168.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1502,20 +1392,20 @@
         <div class="card-id">ID 2402168</div>
         <div class="card-college">Pirganj Govt College, Thakurgaon</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1J8McVHJQE/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1J8McVHJQE/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801792789010" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801792789010" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mdsohagrana99887765@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mdsohagrana99887765@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402169 -->
-      <div class="card" onclick="openModal('Barsan Dey','ID 2402169','St. Joseph Higher Secondary School, Dhaka','2402169.jpg','https://www.facebook.com/barsan.dey.705078','https://wa.me/8801747380208','smarandey@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402169.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1525,20 +1415,20 @@
         <div class="card-id">ID 2402169</div>
         <div class="card-college">St. Joseph Higher Secondary School, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/barsan.dey.705078" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/barsan.dey.705078" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801747380208" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801747380208" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:smarandey@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:smarandey@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402170 -->
-      <div class="card" onclick="openModal('Mimtazul Mostafa','ID 2402170','Hajera Taju Degree College (HTDC), Chattogram','2402170.jpg','https://www.facebook.com/md.mimtazul/','https://wa.me/8801839780801','mimtazmostafa@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402170.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1548,20 +1438,20 @@
         <div class="card-id">ID 2402170</div>
         <div class="card-college">Hajera Taju Degree College (HTDC), Chattogram</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/md.mimtazul/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/md.mimtazul/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801839780801" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801839780801" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mimtazmostafa@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mimtazmostafa@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402171 -->
-      <div class="card" onclick="openModal('Md Muhibur Rahman','ID 2402171','Notre Dame College, Dhaka','2402171.jpg','https://www.facebook.com/share/1Ht9uFpuge/?mibextid=wwXIfr','https://wa.me/8801710304603','mdmuhiburrahmanraihan123@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402171.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1571,20 +1461,20 @@
         <div class="card-id">ID 2402171</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1Ht9uFpuge/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1Ht9uFpuge/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801710304603" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801710304603" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mdmuhiburrahmanraihan123@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mdmuhiburrahmanraihan123@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402172 -->
-      <div class="card" onclick="openModal('Mehrab Hasan Hamja','ID 2402172','New Govt. Degree College, Rajshahi','2402172.jpg','https://www.facebook.com/mehrab.hamja','https://wa.me/8801866601946','mehrabhasan5342@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402172.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1594,20 +1484,20 @@
         <div class="card-id">ID 2402172</div>
         <div class="card-college">New Govt. Degree College, Rajshahi</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/mehrab.hamja" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/mehrab.hamja" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801866601946" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801866601946" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:mehrabhasan5342@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:mehrabhasan5342@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402173 -->
-      <div class="card" onclick="openModal('Sadman Sadik Sifat','ID 2402173','Naogaon Govt. College, Naogaon','2402173.jpg','https://www.facebook.com/sadman.sadik.sifat','https://wa.me/8801315408031','sadmansifat07@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402173.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1617,20 +1507,20 @@
         <div class="card-id">ID 2402173</div>
         <div class="card-college">Naogaon Govt. College, Naogaon</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/sadman.sadik.sifat" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/sadman.sadik.sifat" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801315408031" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801315408031" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:sadmansifat07@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:sadmansifat07@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402174 -->
-      <div class="card" onclick="openModal('Md. Jarif Intiser Soudho','ID 2402174','Notre Dame College, Dhaka','2402174.jpg','https://www.facebook.com/profile.php?id=100090606352703','https://wa.me/8801570221350','jarifintiser@outlook.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402174.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1640,20 +1530,20 @@
         <div class="card-id">ID 2402174</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/profile.php?id=100090606352703" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/profile.php?id=100090606352703" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801570221350" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801570221350" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:jarifintiser@outlook.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:jarifintiser@outlook.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402175 -->
-      <div class="card" onclick="openModal('Tohfa Tabassoom Tihi','ID 2402175','Saidpur Govt. College, Saidpur, Nilphamari','2402175.jpg','https://www.facebook.com/share/1Cj4oXro1e/','https://wa.me/8801728617884','tohfatabassumtihi@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402175.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1663,20 +1553,20 @@
         <div class="card-id">ID 2402175</div>
         <div class="card-college">Saidpur Govt. College, Saidpur, Nilphamari</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/1Cj4oXro1e/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/1Cj4oXro1e/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801728617884" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801728617884" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:tohfatabassumtihi@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:tohfatabassumtihi@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402176 -->
-      <div class="card" onclick="openModal('Mahedi Hasan Rabbi','ID 2402176','Birshreshtho Noor Mohammad Public College, Dhaka','2402176.jpg','https://www.facebook.com/share/18frid27W9/','https://wa.me/8801784763615','rabbymahedi6@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402176.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1686,20 +1576,20 @@
         <div class="card-id">ID 2402176</div>
         <div class="card-college">Birshreshtho Noor Mohammad Public College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/share/18frid27W9/" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/share/18frid27W9/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801784763615" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801784763615" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:rabbymahedi6@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:rabbymahedi6@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402177 -->
-      <div class="card" onclick="openModal('Shafayet Hossan','ID 2402177','Jashore Govt. City College, Jashore','2402177.jpg','https://www.facebook.com/shafayet.hossen.522','https://wa.me/8801723951076','shafayethossan9@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402177.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1709,20 +1599,20 @@
         <div class="card-id">ID 2402177</div>
         <div class="card-college">Jashore Govt. City College, Jashore</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/shafayet.hossen.522" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/shafayet.hossen.522" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801723951076" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801723951076" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:shafayethossan9@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:shafayethossan9@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402178 -->
-      <div class="card" onclick="openModal('Rahul Sarker Soumya','ID 2402178','Government Debendra College, Manikganj','2402178.jpg','https://www.facebook.com/soumya.sarker.831617','https://wa.me/8801602594723','soumyasarker21@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402178.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1732,20 +1622,20 @@
         <div class="card-id">ID 2402178</div>
         <div class="card-college">Government Debendra College, Manikganj</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/soumya.sarker.831617" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/soumya.sarker.831617" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801602594723" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801602594723" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:soumyasarker21@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:soumyasarker21@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402179 -->
-      <div class="card" onclick="openModal('Tausif Faiaz Shadib','ID 2402179','Dhaka Residential Model College','2402179.jpg','https://www.facebook.com/tausiffaiaz.shadib','https://wa.me/8801782218150','tausifshadib@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402179.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1755,20 +1645,20 @@
         <div class="card-id">ID 2402179</div>
         <div class="card-college">Dhaka Residential Model College</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/tausiffaiaz.shadib" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/tausiffaiaz.shadib" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801782218150" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801782218150" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:tausifshadib@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:tausifshadib@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402180 -->
-      <div class="card" onclick="openModal('Utsab Bin Ali','ID 2402180','Brahmanbaria Govt. College, Brahmanbaria','2402180.jpg','https://www.facebook.com/utsabbin1233','https://wa.me/8801799875604','utsaabbinali@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402180.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1778,20 +1668,20 @@
         <div class="card-id">ID 2402180</div>
         <div class="card-college">Brahmanbaria Govt. College, Brahmanbaria</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/utsabbin1233" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/utsabbin1233" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801799875604" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801799875604" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:utsaabbinali@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:utsaabbinali@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
       </div>
 
       <!-- 2402181 -->
-      <div class="card" onclick="openModal('Lairang Tripura','ID 2402181','Notre Dame College, Dhaka','2402181.jpg','https://www.facebook.com/tripuraLairang','https://wa.me/8801921332677','tripuralairang@gmail.com')" style="cursor:pointer;">
+      <div class="card">
         <div class="card-photo-wrap">
           <img src="2402181.jpg"
                onerror="this.onerror=null; this.src='alternative_photo.png';"
@@ -1801,13 +1691,13 @@
         <div class="card-id">ID 2402181</div>
         <div class="card-college">Notre Dame College, Dhaka</div>
         <div class="card-socials">
-          <a href="https://www.facebook.com/tripuraLairang" target="_blank" rel="noopener" title="Facebook" onclick="event.stopPropagation()">
+          <a href="https://www.facebook.com/tripuraLairang" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
           </a>
-          <a href="https://wa.me/8801921332677" target="_blank" rel="noopener" title="WhatsApp" onclick="event.stopPropagation()">
+          <a href="https://wa.me/8801921332677" target="_blank" rel="noopener" title="WhatsApp">
             <img src="whatsapp.png" alt="WhatsApp">
           </a>
-          <a href="mailto:tripuralairang@gmail.com" target="_blank" rel="noopener" title="Email" onclick="event.stopPropagation()">
+          <a href="mailto:tripuralairang@gmail.com" target="_blank" rel="noopener" title="Email">
             <img src="email.png" alt="Email">
           </a>
         </div>
@@ -1839,49 +1729,6 @@
     </div>
     <div class="footer-bottom">© 2024 RUET ME'24 Section C. All rights reserved.</div>
   </footer>
-
-
-  <!-- ── MODAL ── -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal()">&#10005;</button>
-      <img class="modal-photo" id="modalPhoto" src="" alt="">
-      <div class="modal-name" id="modalName"></div>
-      <div class="modal-id" id="modalId"></div>
-      <div class="modal-divider"></div>
-      <div class="modal-college" id="modalCollege"></div>
-      <div class="modal-socials" id="modalSocials"></div>
-    </div>
-  </div>
-
-  <script>
-    function openModal(name, id, college, photo, fb, wa, email) {
-      document.getElementById('modalPhoto').src = photo;
-      document.getElementById('modalPhoto').onerror = function() {
-        this.onerror = null; this.src = 'alternative_photo.png';
-      };
-      document.getElementById('modalPhoto').alt = name;
-      document.getElementById('modalName').textContent = name;
-      document.getElementById('modalId').textContent = id;
-      document.getElementById('modalCollege').textContent = college;
-      document.getElementById('modalSocials').innerHTML =
-        '<a href="' + fb + '" target="_blank" rel="noopener" title="Facebook"><img src="facebook.png" alt="Facebook"></a>' +
-        '<a href="' + wa + '" target="_blank" rel="noopener" title="WhatsApp"><img src="whatsapp.png" alt="WhatsApp"></a>' +
-        '<a href="mailto:' + email + '" target="_blank" rel="noopener" title="Email"><img src="email.png" alt="Email"></a>';
-      document.getElementById('modalOverlay').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-      document.getElementById('modalOverlay').classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    document.getElementById('modalOverlay').addEventListener('click', function(e) {
-      if (e.target === this) closeModal();
-    });
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeModal();
-    });
-  </script>
 
 </body>
 </html>
