@@ -264,6 +264,95 @@
       letter-spacing: 0.06em;
     }
 
+    /* ── SEARCH BAR ── */
+    .search-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 8px 24px 8px;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 13px 20px 13px 46px;
+      border: 1.5px solid var(--outline);
+      border-radius: 50px;
+      background: #fff9f3;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      outline: none;
+      box-shadow: 0 2px 14px rgba(199,135,92,0.10);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(199,135,92,0.18);
+    }
+
+    .search-box input::placeholder {
+      color: #c2a48a;
+      font-style: italic;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #c2a48a;
+      line-height: 1;
+      display: none;
+      padding: 2px 4px;
+      transition: color 0.15s;
+    }
+
+    .search-clear:hover { color: var(--accent); }
+
+    .search-count {
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      min-height: 1.2em;
+      opacity: 0.8;
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 24px 24px;
+      font-family: 'Nunito', sans-serif;
+      color: #c2a48a;
+      font-size: 1rem;
+      grid-column: 1 / -1;
+    }
+
+    .card.hidden { display: none; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .cards-section {
@@ -292,8 +381,20 @@
     <p class="section-subtitle">Department of Mechanical Engineering · RUET · 2024 Series</p>
   </div>
 
+  <!-- ── SEARCH BAR ── -->
+  <div class="search-wrap">
+    <div class="search-box">
+      <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Search by name or ID…" autocomplete="off" spellcheck="false" />
+      <button class="search-clear" id="searchClear" title="Clear search">✕</button>
+    </div>
+  </div>
+  <div class="search-count" id="searchCount"></div>
+
   <main class="cards-section">
-  <div class="cards-grid">
+  <div class="cards-grid" id="cardsGrid">
   <!--Don't Touch Above-->
 
 
@@ -652,7 +753,7 @@
         </div>
         <div class="card-name">Mashruk Hasnine</div>
         <div class="card-id">ID 2402136</div>
-        <div class="card-college">Khulna Public College, Khulna</div>
+        <div class="card-college">Khulna Public College</div>
         <div class="card-socials">
           <a href="https://www.facebook.com/share/18d7mkNp28/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
@@ -1067,7 +1168,7 @@
         </div>
         <div class="card-name">Md Afeef Al Adil</div>
         <div class="card-id">ID 2402154</div>
-        <div class="card-college">The Millennium Stars School And College, Rangpur Cantonment, Rangpur</div>
+        <div class="card-college">The Millennium Stars School And College, Rangpur Cantonment</div>
         <div class="card-socials">
           <a href="https://www.facebook.com/share/1Gb3vuf75N/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
@@ -1252,7 +1353,7 @@
         </div>
         <div class="card-name">Md. Maruf Munawar</div>
         <div class="card-id">ID 2402162</div>
-        <div class="card-college">Cantonment College, Jashore</div>
+        <div class="card-college">Cantonment College Jashore</div>
         <div class="card-socials">
           <a href="https://www.facebook.com/share/1Domd4ZZqb/" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
@@ -1643,7 +1744,7 @@
         </div>
         <div class="card-name">Tausif Faiaz Shadib</div>
         <div class="card-id">ID 2402179</div>
-        <div class="card-college">Dhaka Residential Model College, Dhaka</div>
+        <div class="card-college">Dhaka Residential Model College</div>
         <div class="card-socials">
           <a href="https://www.facebook.com/tausiffaiaz.shadib" target="_blank" rel="noopener" title="Facebook">
             <img src="facebook.png" alt="Facebook">
@@ -1704,6 +1805,7 @@
       </div>
 
   <!--Don't Touch Below-->
+  <div class="no-results" id="noResults">No members found for "<span id="noResultsQuery"></span>"</div>
   </div>
   </main>
 
@@ -1730,5 +1832,71 @@
     <div class="footer-bottom">© 2024 RUET ME'24 Section C. All rights reserved.</div>
   </footer>
 
+  <script>
+    (function () {
+      const input      = document.getElementById('searchInput');
+      const clearBtn   = document.getElementById('searchClear');
+      const countEl    = document.getElementById('searchCount');
+      const noResults  = document.getElementById('noResults');
+      const noResultsQ = document.getElementById('noResultsQuery');
+      const cards      = Array.from(document.querySelectorAll('.cards-grid .card'));
+      const total      = cards.length;
+
+      // Pre-extract search data once
+      const data = cards.map(card => ({
+        el:   card,
+        name: (card.querySelector('.card-name')?.textContent || '').toLowerCase(),
+        id:   (card.querySelector('.card-id')?.textContent || '').replace(/\D/g, '')
+      }));
+
+      function doSearch(raw) {
+        const q = raw.trim().toLowerCase();
+        clearBtn.style.display = q ? 'block' : 'none';
+
+        if (!q) {
+          data.forEach(d => d.el.classList.remove('hidden'));
+          countEl.textContent = '';
+          noResults.style.display = 'none';
+          return;
+        }
+
+        // Detect if query is purely digits → match ID, otherwise match name
+        const isNumeric = /^\d+$/.test(q);
+        let visible = 0;
+
+        data.forEach(d => {
+          const match = isNumeric
+            ? d.id.includes(q)
+            : d.name.includes(q);
+
+          if (match) {
+            d.el.classList.remove('hidden');
+            visible++;
+          } else {
+            d.el.classList.add('hidden');
+          }
+        });
+
+        if (visible === 0) {
+          noResults.style.display = 'block';
+          noResultsQ.textContent  = raw.trim();
+          countEl.textContent     = '';
+        } else {
+          noResults.style.display = 'none';
+          countEl.textContent     = visible === total
+            ? ''
+            : `Showing ${visible} of ${total} members`;
+        }
+      }
+
+      input.addEventListener('input', () => doSearch(input.value));
+
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        doSearch('');
+        input.focus();
+      });
+    })();
+  </script>
 </body>
 </html>
