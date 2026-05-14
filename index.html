@@ -344,7 +344,7 @@
     .no-results {
       display: none;
       text-align: center;
-      padding: 24px 24px;
+      padding: 48px 24px;
       font-family: 'Nunito', sans-serif;
       color: #c2a48a;
       font-size: 1rem;
@@ -1846,8 +1846,12 @@
       const data = cards.map(card => ({
         el:   card,
         name: (card.querySelector('.card-name')?.textContent || '').toLowerCase(),
-        id:   (card.querySelector('.card-id')?.textContent || '').replace(/\D/g, '')
+        id:   (card.querySelector('.card-id')?.textContent || '').replace(/\D/g, ''),
+        tag:  (card.querySelector('.tag')?.textContent || '').toLowerCase()
       }));
+
+      // Keywords that trigger CR filter
+      const CR_PATTERNS = /^(cr|class\s*rep(resentative)?)$/i;
 
       function doSearch(raw) {
         const q = raw.trim().toLowerCase();
@@ -1860,14 +1864,21 @@
           return;
         }
 
+        // Check for CR / class representative keyword
+        const isCRSearch = CR_PATTERNS.test(q);
         // Detect if query is purely digits → match ID, otherwise match name
-        const isNumeric = /^\d+$/.test(q);
+        const isNumeric  = /^\d+$/.test(q);
         let visible = 0;
 
         data.forEach(d => {
-          const match = isNumeric
-            ? d.id.includes(q)
-            : d.name.includes(q);
+          let match;
+          if (isCRSearch) {
+            match = d.tag.includes('class representative');
+          } else if (isNumeric) {
+            match = d.id.includes(q);
+          } else {
+            match = d.name.includes(q);
+          }
 
           if (match) {
             d.el.classList.remove('hidden');
@@ -1883,9 +1894,13 @@
           countEl.textContent     = '';
         } else {
           noResults.style.display = 'none';
-          countEl.textContent     = visible === total
-            ? ''
-            : `Showing ${visible} of ${total} members`;
+          if (isCRSearch) {
+            countEl.textContent = `${visible} Class Representative${visible > 1 ? 's' : ''} found`;
+          } else {
+            countEl.textContent = visible === total
+              ? ''
+              : `Showing ${visible} of ${total} members`;
+          }
         }
       }
 
