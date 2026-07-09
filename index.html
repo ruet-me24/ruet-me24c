@@ -446,6 +446,13 @@
       transform: scale(1.08);
     }
 
+    .carousel-arrow:disabled {
+      opacity: 0.28;
+      cursor: default;
+      pointer-events: none;
+      transform: none;
+    }
+
     .routine-carousel {
       overflow: hidden;
       width: 100%;
@@ -2130,7 +2137,8 @@
   <section class="tab-panel" id="routinePanel">
 
     <div class="routine-intro">
-      <div class="routine-room">Default classroom — FS 202 (Fitting Shop 202) unless noted</div>
+      <div class="routine-room">Default Classroom: FS 202 (Fitting Shop - Room 202)</div>
+      <div class="routine-room">HE 205 (Heat Engine Lab - Room 205)</div>
     </div>
 
     <div class="routine-carousel-wrap">
@@ -2369,7 +2377,7 @@
         const label = labelFor(offset);
         const body = classes.length
           ? classes.map(c => classRowHTML(c, d)).join('')
-          : `<div class="day-empty">No classes — enjoy the day off</div>`;
+          : `<div class="day-empty">No classes - enjoy the day off</div>`;
         return `
           <div class="day-card${offset === 0 ? ' is-today' : ''}">
             <div class="day-card-header">
@@ -2403,8 +2411,17 @@
       /* ---------- Swipeable Yesterday/Today/Tomorrow carousel ---------- */
       const track     = document.getElementById('carouselTrack');
       const carousel  = document.getElementById('routineCarousel');
-      let centerOffset = 0; // which real day is centered (0 = today)
+      const prevBtn   = document.getElementById('carouselPrev');
+      const nextBtn   = document.getElementById('carouselNext');
+      const MIN_OFFSET = -1; // Yesterday
+      const MAX_OFFSET = 1;  // Tomorrow
+      let centerOffset = 0;  // which real day is centered (0 = Today)
       let renderedOnce = false;
+
+      function updateArrowState() {
+        prevBtn.disabled = centerOffset <= MIN_OFFSET;
+        nextBtn.disabled = centerOffset >= MAX_OFFSET;
+      }
 
       function buildTrack() {
         track.innerHTML = [-1, 0, 1].map(rel => `<div class="carousel-slide">${dayCardHTML(centerOffset + rel)}</div>`).join('');
@@ -2412,6 +2429,7 @@
         track.style.transform = 'translateX(-100%)';
         // force reflow so future transitions apply
         void track.offsetWidth;
+        updateArrowState();
       }
 
       function refreshCarousel() {
@@ -2422,18 +2440,25 @@
       }
 
       function goTo(direction) {
-        // direction: -1 (prev/yesterday side) or 1 (next/tomorrow side)
+        // direction: -1 (toward Yesterday) or 1 (toward Tomorrow)
+        const target = centerOffset + direction;
+        if (target < MIN_OFFSET || target > MAX_OFFSET) {
+          // Already at an edge — bounce back to center, don't reveal further days.
+          track.style.transition = 'transform 0.28s cubic-bezier(.22,.61,.36,1)';
+          track.style.transform = 'translateX(-100%)';
+          return;
+        }
         track.style.transition = 'transform 0.32s cubic-bezier(.22,.61,.36,1)';
         track.style.transform = `translateX(${direction === 1 ? '-200%' : '0%'})`;
         track.addEventListener('transitionend', function handler() {
           track.removeEventListener('transitionend', handler);
-          centerOffset += direction;
+          centerOffset = target;
           buildTrack();
         }, { once: true });
       }
 
-      document.getElementById('carouselPrev').addEventListener('click', () => goTo(-1));
-      document.getElementById('carouselNext').addEventListener('click', () => goTo(1));
+      prevBtn.addEventListener('click', () => goTo(-1));
+      nextBtn.addEventListener('click', () => goTo(1));
 
       /* Drag / touch swipe */
       let startX = 0, dragging = false, trackWidth = 0;
