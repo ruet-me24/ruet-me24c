@@ -363,6 +363,287 @@
 
     .card.hidden { display: none; }
 
+    /* ── TABS ── */
+    .tabs-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      padding: 4px 24px 32px;
+    }
+
+    .tab-btn {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      background: transparent;
+      border: 1.5px solid var(--outline);
+      border-radius: 50px;
+      padding: 11px 28px;
+      cursor: pointer;
+      transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.15s ease;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .tab-btn.active {
+      background: var(--text);
+      color: var(--bg);
+      border-color: var(--text);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── ROUTINE: CAROUSEL ── */
+    .routine-intro {
+      text-align: center;
+      padding: 0 24px 8px;
+    }
+
+    .routine-intro .routine-room {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      opacity: 0.8;
+    }
+
+    .routine-carousel-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 20px 8px 8px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .carousel-arrow {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid var(--outline);
+      background: var(--bg);
+      color: var(--accent);
+      font-size: 1.3rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+
+    .carousel-arrow:hover {
+      border-color: var(--accent);
+      transform: scale(1.08);
+    }
+
+    .routine-carousel {
+      overflow: hidden;
+      width: 100%;
+      max-width: 480px;
+      touch-action: pan-y;
+    }
+
+    .carousel-track {
+      display: flex;
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+      padding: 4px 10px;
+      box-sizing: border-box;
+    }
+
+    /* ── DAY CARD ── */
+    .day-card {
+      background: var(--bg);
+      border: 1.5px solid var(--outline);
+      border-radius: 18px;
+      box-shadow: var(--card-shadow);
+      width: 100%;
+      max-width: 400px;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .day-card.is-today {
+      border-color: var(--text);
+      box-shadow: 0 8px 32px rgba(3,3,3,0.18);
+    }
+
+    .day-card-header {
+      background: var(--text);
+      color: var(--bg);
+      padding: 16px 22px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .day-card-header .day-label {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.02em;
+    }
+
+    .day-card-header .day-date {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      opacity: 0.75;
+      text-transform: uppercase;
+    }
+
+    .day-card-body {
+      padding: 6px 0;
+      min-height: 90px;
+    }
+
+    .day-empty {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      color: #A79E85;
+      text-align: center;
+      padding: 30px 20px;
+      font-style: italic;
+    }
+
+    /* Ticket-style class row */
+    .class-row {
+      display: grid;
+      grid-template-columns: 66px 0px 1fr;
+      align-items: stretch;
+      position: relative;
+      padding: 14px 18px 14px 16px;
+      border-bottom: 1.5px dashed var(--outline);
+    }
+
+    .class-row:last-child { border-bottom: none; }
+
+    .class-row.is-now {
+      background: rgba(48,67,88,0.06);
+    }
+
+    .class-row.is-now::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 3px;
+      background: var(--accent);
+      border-radius: 0 3px 3px 0;
+    }
+
+    .class-time {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+    }
+
+    .class-time .t-end { opacity: 0.55; font-weight: 600; }
+
+    .class-punch {
+      position: relative;
+      width: 0;
+    }
+
+    .class-punch::before,
+    .class-punch::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1.5px solid var(--outline);
+      left: -5px;
+    }
+
+    .class-punch::before { top: -14px; }
+    .class-punch::after  { bottom: -14px; }
+
+    .class-info {
+      padding-left: 16px;
+      border-left: 1.5px dashed var(--outline);
+    }
+
+    .class-code {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .class-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+      margin: 3px 0 4px;
+    }
+
+    .class-teacher {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text);
+      opacity: 0.75;
+    }
+
+    .class-room {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      color: var(--accent);
+      opacity: 0.7;
+      margin-top: 2px;
+    }
+
+    .class-room.is-alt { opacity: 0.95; font-weight: 700; }
+
+    /* ── WEEK GRID ── */
+    .week-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 44px 40px 60px;
+    }
+
+    .week-heading {
+      text-align: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .cards-section {
@@ -374,6 +655,21 @@
       }
       .address-section {
         padding: 44px 22px 36px;
+      }
+      .tabs-wrap {
+        gap: 10px;
+      }
+      .tab-btn {
+        padding: 10px 20px;
+        font-size: 0.78rem;
+      }
+      .week-section {
+        padding: 36px 18px 48px;
+      }
+      .carousel-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -389,6 +685,15 @@
   <div class="section-title-wrap">
     <p class="section-subtitle">Department of Mechanical Engineering . RUET . 2024 Series . Section C</p>
   </div>
+
+  <!-- ── TABS ── -->
+  <div class="tabs-wrap">
+    <button class="tab-btn active" id="tabBtnDirectory" data-tab="directory">Directory</button>
+    <button class="tab-btn" id="tabBtnRoutine" data-tab="routine">Routine</button>
+  </div>
+
+  <!-- ── DIRECTORY TAB ── -->
+  <section class="tab-panel active" id="directoryPanel">
 
   <!-- ── SEARCH BAR ── -->
   <div class="search-wrap">
@@ -1818,6 +2123,32 @@
   </div>
   </main>
 
+  </section>
+  <!-- ── END DIRECTORY TAB ── -->
+
+  <!-- ── ROUTINE TAB ── -->
+  <section class="tab-panel" id="routinePanel">
+
+    <div class="routine-intro">
+      <div class="routine-room">Default classroom — FS 202 (Fitting Shop 202) unless noted</div>
+    </div>
+
+    <div class="routine-carousel-wrap">
+      <button class="carousel-arrow" id="carouselPrev" aria-label="Previous day">‹</button>
+      <div class="routine-carousel" id="routineCarousel">
+        <div class="carousel-track" id="carouselTrack"></div>
+      </div>
+      <button class="carousel-arrow" id="carouselNext" aria-label="Next day">›</button>
+    </div>
+
+    <div class="week-section">
+      <h3 class="week-heading">Saturday – Wednesday</h3>
+      <div class="week-grid" id="weekGrid"></div>
+    </div>
+
+  </section>
+  <!-- ── END ROUTINE TAB ── -->
+
   <!-- ── ADDRESS SECTION ── -->
   <footer class="address-section">
     <img src="ruetme24clogo.png" alt="RUET ME'24 Logo" class="footer-logo" />
@@ -1920,6 +2251,230 @@
         doSearch('');
         input.focus();
       });
+    })();
+  </script>
+
+  <!-- ── TABS + ROUTINE ── -->
+  <script>
+    (function () {
+      /* ---------- Tab switching ---------- */
+      const tabBtns   = document.querySelectorAll('.tab-btn');
+      const panels    = {
+        directory: document.getElementById('directoryPanel'),
+        routine:   document.getElementById('routinePanel')
+      };
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          Object.values(panels).forEach(p => p.classList.remove('active'));
+          panels[btn.dataset.tab].classList.add('active');
+          if (btn.dataset.tab === 'routine') refreshCarousel();
+        });
+      });
+
+      /* ---------- Routine data ---------- */
+      const FS202 = 'FS 202';
+
+      const SCHEDULE = {
+        Saturday: [
+          { start: '10:50 AM', end: '11:40 AM', code: 'HUM 2121', title: 'Accounting & Industrial Law', teacher: 'Md. Abu Bokar Siddique', room: FS202 },
+          { start: '11:40 AM', end: '12:30 PM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'GCP', room: FS202 }
+        ],
+        Sunday: [
+          { start: '08:00 AM', end: '08:50 AM', code: 'ME 2103', title: 'Engineering Mechanics', teacher: 'Prof. Md. Wahedul Islam', room: FS202 },
+          { start: '08:50 AM', end: '09:40 AM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'XX', room: FS202 },
+          { start: '09:40 AM', end: '10:30 AM', code: 'HUM 2121', title: 'Accounting & Industrial Law', teacher: 'Md. Abu Bokar Siddique', room: FS202 },
+          { start: '10:50 AM', end: '11:40 AM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'Dr. Jannatul Ferdous', room: FS202 }
+        ],
+        Monday: [
+          { start: '10:50 AM', end: '11:40 AM', code: 'ME 2105', title: 'Fluid Mechanics', teacher: 'Dr. Mahadi Hasan Masud', room: FS202 },
+          { start: '11:40 AM', end: '12:30 PM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'XX', room: FS202 },
+          { start: '12:30 PM', end: '01:20 PM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'Prof. Dr. Mohammad Shahed Hasan Khan Tushar', room: FS202 },
+          { start: '02:30 PM', end: '05:00 PM', code: 'ME 2100', title: 'Computer Aided Drawing', teacher: 'Prof. Dr. Syed Mamun R Rasid', room: 'HE 205' }
+        ],
+        Tuesday: [
+          { start: '10:50 AM', end: '11:40 AM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'GCP', room: FS202 },
+          { start: '12:30 PM', end: '01:20 PM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'Dr. Jannatul Ferdous', room: FS202 },
+          { start: '02:30 PM', end: '04:10 PM', code: 'ME 2105', title: 'Fluid Mechanics', teacher: 'Prof. Dr. Mohammad Rofiqul Islam', room: 'HE 205' }
+        ],
+        Wednesday: [
+          { start: '08:00 AM', end: '09:40 AM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'Prof. Dr. Mohammad Shahed Hasan Khan Tushar', room: FS202 },
+          { start: '09:40 AM', end: '10:30 AM', code: 'HUM 2121', title: 'Accounting & Industrial Law', teacher: 'Md. Abu Bokar Siddique', room: FS202 },
+          { start: '10:50 AM', end: '11:40 AM', code: 'ME 2106', title: 'Fluid Mechanics I (Sessional)', teacher: 'Prof. Dr. Mohammad Rofiqul Islam', room: FS202 }
+        ],
+        Thursday: [],
+        Friday: []
+      };
+
+      const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const MONTHS    = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+      function to12hParts(t) {
+        // "10:50 AM" -> {h:10, m:50, mer:'AM'}
+        const [time, mer] = t.split(' ');
+        const [h, m] = time.split(':').map(Number);
+        return { h: (mer === 'PM' && h !== 12) ? h + 12 : (mer === 'AM' && h === 12 ? 0 : h), m };
+      }
+
+      function isNow(cls, dateObj) {
+        const now = new Date();
+        if (dateObj.toDateString() !== now.toDateString()) return false;
+        const s = to12hParts(cls.start), e = to12hParts(cls.end);
+        const nowMin = now.getHours() * 60 + now.getMinutes();
+        return nowMin >= (s.h * 60 + s.m) && nowMin < (e.h * 60 + e.m);
+      }
+
+      function dateFor(offsetDays) {
+        const d = new Date();
+        d.setDate(d.getDate() + offsetDays);
+        return d;
+      }
+
+      function labelFor(offset) {
+        if (offset === 0) return 'Today';
+        if (offset === -1) return 'Yesterday';
+        if (offset === 1) return 'Tomorrow';
+        const d = dateFor(offset);
+        return DAY_NAMES[d.getDay()];
+      }
+
+      function formatDate(d) {
+        return `${DAY_NAMES[d.getDay()]}, ${d.getDate()} ${MONTHS[d.getMonth()]}`;
+      }
+
+      function classRowHTML(cls, dateObj) {
+        const alt = cls.room && cls.room !== FS202;
+        return `
+          <div class="class-row${isNow(cls, dateObj) ? ' is-now' : ''}">
+            <div class="class-time">
+              <span class="t-start">${cls.start}</span>
+              <span class="t-end">${cls.end}</span>
+            </div>
+            <div class="class-punch"></div>
+            <div class="class-info">
+              <div class="class-code">${cls.code}</div>
+              <div class="class-title">${cls.title}</div>
+              <div class="class-teacher">${cls.teacher}</div>
+              ${alt ? `<div class="class-room is-alt">📍 ${cls.room}</div>` : ''}
+            </div>
+          </div>`;
+      }
+
+      function dayCardHTML(offset) {
+        const d = dateFor(offset);
+        const dayName = DAY_NAMES[d.getDay()];
+        const classes = SCHEDULE[dayName] || [];
+        const label = labelFor(offset);
+        const body = classes.length
+          ? classes.map(c => classRowHTML(c, d)).join('')
+          : `<div class="day-empty">No classes — enjoy the day off</div>`;
+        return `
+          <div class="day-card${offset === 0 ? ' is-today' : ''}">
+            <div class="day-card-header">
+              <span class="day-label">${label}</span>
+              <span class="day-date">${formatDate(d)}</span>
+            </div>
+            <div class="day-card-body">${body}</div>
+          </div>`;
+      }
+
+      /* Static week grid, Saturday -> Wednesday */
+      function renderWeekGrid() {
+        const order = ['Saturday','Sunday','Monday','Tuesday','Wednesday'];
+        const grid = document.getElementById('weekGrid');
+        const today = DAY_NAMES[new Date().getDay()];
+        grid.innerHTML = order.map(dayName => {
+          const classes = SCHEDULE[dayName] || [];
+          const body = classes.length
+            ? classes.map(c => classRowHTML(c, new Date(8640000000000000))).join('') // never "now" in week view
+            : `<div class="day-empty">No classes</div>`;
+          return `
+            <div class="day-card${dayName === today ? ' is-today' : ''}">
+              <div class="day-card-header">
+                <span class="day-label">${dayName}</span>
+              </div>
+              <div class="day-card-body">${body}</div>
+            </div>`;
+        }).join('');
+      }
+
+      /* ---------- Swipeable Yesterday/Today/Tomorrow carousel ---------- */
+      const track     = document.getElementById('carouselTrack');
+      const carousel  = document.getElementById('routineCarousel');
+      let centerOffset = 0; // which real day is centered (0 = today)
+      let renderedOnce = false;
+
+      function buildTrack() {
+        track.innerHTML = [-1, 0, 1].map(rel => `<div class="carousel-slide">${dayCardHTML(centerOffset + rel)}</div>`).join('');
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(-100%)';
+        // force reflow so future transitions apply
+        void track.offsetWidth;
+      }
+
+      function refreshCarousel() {
+        if (renderedOnce) return;
+        buildTrack();
+        renderWeekGrid();
+        renderedOnce = true;
+      }
+
+      function goTo(direction) {
+        // direction: -1 (prev/yesterday side) or 1 (next/tomorrow side)
+        track.style.transition = 'transform 0.32s cubic-bezier(.22,.61,.36,1)';
+        track.style.transform = `translateX(${direction === 1 ? '-200%' : '0%'})`;
+        track.addEventListener('transitionend', function handler() {
+          track.removeEventListener('transitionend', handler);
+          centerOffset += direction;
+          buildTrack();
+        }, { once: true });
+      }
+
+      document.getElementById('carouselPrev').addEventListener('click', () => goTo(-1));
+      document.getElementById('carouselNext').addEventListener('click', () => goTo(1));
+
+      /* Drag / touch swipe */
+      let startX = 0, dragging = false, trackWidth = 0;
+
+      function pointerDown(x) {
+        dragging = true;
+        startX = x;
+        trackWidth = carousel.getBoundingClientRect().width;
+        track.style.transition = 'none';
+      }
+
+      function pointerMove(x) {
+        if (!dragging) return;
+        const delta = x - startX;
+        track.style.transform = `translateX(calc(-100% + ${delta}px))`;
+      }
+
+      function pointerUp(x) {
+        if (!dragging) return;
+        dragging = false;
+        const delta = x - startX;
+        const threshold = Math.min(90, trackWidth * 0.18);
+        if (delta > threshold) {
+          goTo(-1);
+        } else if (delta < -threshold) {
+          goTo(1);
+        } else {
+          track.style.transition = 'transform 0.28s cubic-bezier(.22,.61,.36,1)';
+          track.style.transform = 'translateX(-100%)';
+        }
+      }
+
+      carousel.addEventListener('pointerdown', e => pointerDown(e.clientX));
+      window.addEventListener('pointermove', e => pointerMove(e.clientX));
+      window.addEventListener('pointerup', e => pointerUp(e.clientX));
+      carousel.addEventListener('pointercancel', e => pointerUp(e.clientX));
+
+      /* Build immediately if Routine tab is opened first, and lazily otherwise */
+      if (document.getElementById('routinePanel').classList.contains('active')) {
+        refreshCarousel();
+      }
     })();
   </script>
 </body>
