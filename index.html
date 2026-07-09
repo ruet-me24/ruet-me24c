@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RUET ME'24 - Section C</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Serif+Display&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="ruetme24cicon.png">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -2461,40 +2462,65 @@
       nextBtn.addEventListener('click', () => goTo(1));
 
       /* Drag / touch swipe */
-      let startX = 0, dragging = false, trackWidth = 0;
+      let startX = 0, startY = 0, trackWidth = 0;
+      let touchActive = false;   // finger/mouse is down
+      let dragging = false;      // gesture has been decided to be a horizontal swipe
+      let decided = false;       // have we figured out the gesture direction yet
+      const DIRECTION_THRESHOLD = 10; // px of movement before we decide intent
 
-      function pointerDown(x) {
-        dragging = true;
+      function pointerDown(x, y) {
+        touchActive = true;
+        dragging = false;
+        decided = false;
         startX = x;
+        startY = y;
         trackWidth = carousel.getBoundingClientRect().width;
-        track.style.transition = 'none';
       }
 
-      function pointerMove(x) {
+      function pointerMove(x, y) {
+        if (!touchActive) return;
+        const dx = x - startX;
+        const dy = y - startY;
+
+        if (!decided) {
+          if (Math.abs(dx) < DIRECTION_THRESHOLD && Math.abs(dy) < DIRECTION_THRESHOLD) return;
+          decided = true;
+          if (Math.abs(dx) > Math.abs(dy)) {
+            // Clearly horizontal — this is a swipe on the card.
+            dragging = true;
+            track.style.transition = 'none';
+          } else {
+            // Clearly vertical — this is a page scroll, leave the card alone.
+            dragging = false;
+          }
+        }
+
         if (!dragging) return;
-        const delta = x - startX;
-        track.style.transform = `translateX(calc(-100% + ${delta}px))`;
+        track.style.transform = `translateX(calc(-100% + ${dx}px))`;
       }
 
       function pointerUp(x) {
-        if (!dragging) return;
-        dragging = false;
-        const delta = x - startX;
-        const threshold = Math.min(90, trackWidth * 0.18);
-        if (delta > threshold) {
-          goTo(-1);
-        } else if (delta < -threshold) {
-          goTo(1);
-        } else {
-          track.style.transition = 'transform 0.28s cubic-bezier(.22,.61,.36,1)';
-          track.style.transform = 'translateX(-100%)';
+        if (dragging) {
+          const delta = x - startX;
+          const threshold = Math.min(90, trackWidth * 0.18);
+          if (delta > threshold) {
+            goTo(-1);
+          } else if (delta < -threshold) {
+            goTo(1);
+          } else {
+            track.style.transition = 'transform 0.28s cubic-bezier(.22,.61,.36,1)';
+            track.style.transform = 'translateX(-100%)';
+          }
         }
+        touchActive = false;
+        dragging = false;
+        decided = false;
       }
 
-      carousel.addEventListener('pointerdown', e => pointerDown(e.clientX));
-      window.addEventListener('pointermove', e => pointerMove(e.clientX));
+      carousel.addEventListener('pointerdown', e => pointerDown(e.clientX, e.clientY));
+      window.addEventListener('pointermove', e => pointerMove(e.clientX, e.clientY));
       window.addEventListener('pointerup', e => pointerUp(e.clientX));
-      carousel.addEventListener('pointercancel', e => pointerUp(e.clientX));
+      carousel.addEventListener('pointercancel', () => { touchActive = false; dragging = false; decided = false; });
 
       /* Build immediately if Routine tab is opened first, and lazily otherwise */
       if (document.getElementById('routinePanel').classList.contains('active')) {
