@@ -642,7 +642,7 @@
       font-size: 1.4rem;
       font-weight: 400;
       color: var(--text);
-      margin-bottom: 28px;
+      margin: 56px 0 28px;
       position: relative;
     }
 
@@ -659,7 +659,7 @@
       font-size: 1.4rem;
       font-weight: 400;
       color: var(--text);
-      margin: 56px 0 22px;
+      margin: 0 0 22px;
     }
 
     .timetable-wrap {
@@ -2267,13 +2267,13 @@
     </div>
 
     <div class="week-section">
-      <h3 class="week-heading">Saturday – Wednesday</h3>
-      <div class="week-grid" id="weekGrid"></div>
-
       <h3 class="timetable-heading">Weekly Timetable — At a Glance</h3>
       <div class="timetable-wrap">
         <table class="timetable" id="timetableGrid"></table>
       </div>
+
+      <h3 class="week-heading">Weekly Schedule — In Detail</h3>
+      <div class="week-grid" id="weekGrid"></div>
     </div>
 
   </section>
@@ -2499,7 +2499,7 @@
         const label = labelFor(offset);
         const body = classes.length
           ? classes.map(c => classRowHTML(c, d)).join('')
-          : `<div class="day-empty">No classes - enjoy the day off</div>`;
+          : `<div class="day-empty">No classes — enjoy the day off</div>`;
         return `
           <div class="day-card${offset === 0 ? ' is-today' : ''}">
             <div class="day-card-header">
