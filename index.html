@@ -652,6 +652,122 @@
       gap: 24px;
     }
 
+    /* ── WEEKLY TIMETABLE ── */
+    .timetable-heading {
+      text-align: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--text);
+      margin: 56px 0 22px;
+    }
+
+    .timetable-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1.5px solid var(--outline);
+      border-radius: 14px;
+    }
+
+    table.timetable {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 760px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    table.timetable th,
+    table.timetable td {
+      border: 1px solid var(--outline);
+      padding: 10px 8px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    table.timetable thead th {
+      background: var(--text);
+      color: var(--bg);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      padding: 12px 8px;
+    }
+
+    table.timetable thead th.day-col-head {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+    }
+
+    table.timetable th.break-col,
+    table.timetable td.break-col {
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(3,3,3,0.05),
+        rgba(3,3,3,0.05) 5px,
+        transparent 5px,
+        transparent 10px
+      );
+      width: 34px;
+      min-width: 34px;
+      font-size: 0.62rem;
+      color: var(--text);
+      opacity: 0.65;
+      writing-mode: vertical-rl;
+      letter-spacing: 0.05em;
+    }
+
+    td.day-col {
+      position: sticky;
+      left: 0;
+      background: var(--bg);
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text);
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    td.day-col.is-today {
+      color: var(--accent);
+    }
+
+    tr.is-today-row td {
+      background: rgba(48,67,88,0.05);
+    }
+
+    tr.is-today-row td.day-col {
+      background: rgba(48,67,88,0.09);
+    }
+
+    td.tt-cell.has-class {
+      background: rgba(3,3,3,0.025);
+    }
+
+    .tt-code {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    .tt-teacher {
+      display: block;
+      font-size: 0.68rem;
+      color: var(--accent);
+      opacity: 0.85;
+      margin-top: 2px;
+      font-weight: 700;
+    }
+
+    .tt-empty {
+      color: var(--outline);
+      font-size: 0.9rem;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .cards-section {
@@ -2153,6 +2269,11 @@
     <div class="week-section">
       <h3 class="week-heading">Saturday – Wednesday</h3>
       <div class="week-grid" id="weekGrid"></div>
+
+      <h3 class="timetable-heading">Weekly Timetable — At a Glance</h3>
+      <div class="timetable-wrap">
+        <table class="timetable" id="timetableGrid"></table>
+      </div>
     </div>
 
   </section>
@@ -2288,30 +2409,30 @@
 
       const SCHEDULE = {
         Saturday: [
-          { start: '10:50 AM', end: '11:40 AM', code: 'HUM 2121', title: 'Accounting & Industrial Law', teacher: 'Md. Abu Bokar Siddique', room: FS202 },
-          { start: '11:40 AM', end: '12:30 PM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'GCP', room: FS202 }
+          { start: '10:50 AM', end: '11:40 AM', code: 'HUM 2121', title: 'Accounting & Industrial Law', teacher: 'ABS', teacherFull: 'Md. Abu Bokar Siddique', room: FS202 },
+          { start: '11:40 AM', end: '12:30 PM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'GCP', teacherFull: 'GCP', room: FS202 }
         ],
         Sunday: [
-          { start: '08:00 AM', end: '08:50 AM', code: 'ME 2103', title: 'Engineering Mechanics', teacher: 'Prof. Md. Wahedul Islam', room: FS202 },
-          { start: '08:50 AM', end: '09:40 AM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'XX', room: FS202 },
-          { start: '09:40 AM', end: '10:30 AM', code: 'HUM 2121', title: 'Accounting & Industrial Law', teacher: 'Shoaib Islams', room: FS202 },
-          { start: '10:50 AM', end: '11:40 AM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'Dr. Jannatul Ferdous', room: FS202 }
+          { start: '08:00 AM', end: '08:50 AM', code: 'ME 2103', title: 'Engineering Mechanics', teacher: 'MWI', teacherFull: 'Prof. Md. Wahedul Islam', room: FS202 },
+          { start: '08:50 AM', end: '09:40 AM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'XX', teacherFull: 'XX', room: FS202 },
+          { start: '09:40 AM', end: '10:30 AM', code: 'HUM 2121', title: 'Accounting & Industrial Law', teacher: 'SI', teacherFull: 'Shoaib Islams', room: FS202 },
+          { start: '10:50 AM', end: '11:40 AM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'JF', teacherFull: 'Dr. Jannatul Ferdous', room: FS202 }
         ],
         Monday: [
-          { start: '10:50 AM', end: '11:40 AM', code: 'ME 2105', title: 'Fluid Mechanics', teacher: 'Dr. Mahadi Hasan Masud', room: FS202 },
-          { start: '11:40 AM', end: '12:30 PM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'XX', room: FS202 },
-          { start: '12:30 PM', end: '01:20 PM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'Prof. Dr. Mohammad Shahed Hasan Khan Tushar', room: FS202 },
-          { start: '02:30 PM', end: '05:00 PM', code: 'ME 2100', title: 'Computer Aided Drawing', teacher: 'Prof. Dr. Syed Mamun R Rasid', room: 'HE 205' }
+          { start: '10:50 AM', end: '11:40 AM', code: 'ME 2105', title: 'Fluid Mechanics', teacher: 'MHM', teacherFull: 'Dr. Mahadi Hasan Masud', room: FS202 },
+          { start: '11:40 AM', end: '12:30 PM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'XX', teacherFull: 'XX', room: FS202 },
+          { start: '12:30 PM', end: '01:20 PM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'SHK', teacherFull: 'Prof. Dr. Mohammad Shahed Hasan Khan Tushar', room: FS202 },
+          { start: '02:30 PM', end: '05:00 PM', code: 'ME 2100', title: 'Computer Aided Drawing', teacher: 'SMR', teacherFull: 'Prof. Dr. Syed Mamun R Rasid', room: 'HE 205' }
         ],
         Tuesday: [
-          { start: '10:50 AM', end: '11:40 AM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'GCP', room: FS202 },
-          { start: '12:30 PM', end: '01:20 PM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'Dr. Jannatul Ferdous', room: FS202 },
-          { start: '02:30 PM', end: '04:10 PM', code: 'ME 2105', title: 'Fluid Mechanics', teacher: 'Prof. Dr. Mohammad Rofiqul Islam', room: 'HE 205' }
+          { start: '10:50 AM', end: '11:40 AM', code: 'MATH 2121', title: 'Differential Equation, Complex Variable & Harmonic Analysis', teacher: 'GCP', teacherFull: 'GCP', room: FS202 },
+          { start: '12:30 PM', end: '01:20 PM', code: 'ME 2101', title: 'Thermodynamics', teacher: 'JF', teacherFull: 'Dr. Jannatul Ferdous', room: FS202 },
+          { start: '02:30 PM', end: '04:10 PM', code: 'ME 2105', title: 'Fluid Mechanics', teacher: 'MRI', teacherFull: 'Prof. Dr. Mohammad Rofiqul Islam', room: 'HE 205' }
         ],
         Wednesday: [
-          { start: '08:00 AM', end: '09:40 AM', code: 'ME 2103', title: 'Engineering Mechanics', teacher: 'Prof. Dr. Shahajada Mahmudul Hassan', room: FS202 },
-          { start: '09:40 AM', end: '10:30 AM', code: 'HUM 2121', title: 'Accounting & Industrial Law', teacher: 'Md. Abu Bokar Siddique', room: FS202 },
-          { start: '10:50 AM', end: '01:20 PM', code: 'ME 2106', title: 'Fluid Mechanics I (Sessional)', teacher: 'Prof. Dr. Mohammad Rofiqul Islam', room: FS202 }
+          { start: '08:00 AM', end: '09:40 AM', code: 'ME 2103', title: 'Engineering Mechanics', teacher: 'SMH', teacherFull: 'Prof. Dr. Shahajada Mahmudul Hassan', room: FS202 },
+          { start: '09:40 AM', end: '10:30 AM', code: 'HUM 2121', title: 'Accounting & Industrial Law', teacher: 'ABS', teacherFull: 'Md. Abu Bokar Siddique', room: FS202 },
+          { start: '10:50 AM', end: '01:20 PM', code: 'ME 2106', title: 'Fluid Mechanics I (Sessional)', teacher: 'MRI', teacherFull: 'Prof. Dr. Mohammad Rofiqul Islam', room: FS202 }
         ],
         Thursday: [],
         Friday: []
@@ -2365,7 +2486,7 @@
             <div class="class-info">
               <div class="class-code">${cls.code}</div>
               <div class="class-title">${cls.title}</div>
-              <div class="class-teacher">${cls.teacher}</div>
+              <div class="class-teacher">${cls.teacherFull || cls.teacher}</div>
               ${alt ? `<div class="class-room is-alt">📍 ${cls.room}</div>` : ''}
             </div>
           </div>`;
@@ -2409,6 +2530,78 @@
         }).join('');
       }
 
+      /* ---------- Weekly timetable (code + teacher only, merged across periods) ---------- */
+      const PERIODS = [
+        { start: '08:00 AM', end: '08:50 AM' },
+        { start: '08:50 AM', end: '09:40 AM' },
+        { start: '09:40 AM', end: '10:30 AM' },
+        { start: '10:50 AM', end: '11:40 AM' },
+        { start: '11:40 AM', end: '12:30 PM' },
+        { start: '12:30 PM', end: '01:20 PM' },
+        { start: '02:30 PM', end: '03:20 PM' },
+        { start: '03:20 PM', end: '04:10 PM' },
+        { start: '04:10 PM', end: '05:00 PM' }
+      ].map(p => ({
+        ...p,
+        startMin: to12hParts(p.start).h * 60 + to12hParts(p.start).m,
+        endMin: to12hParts(p.end).h * 60 + to12hParts(p.end).m,
+        label: `${p.start.replace(' ', '')}–${p.end.replace(' ', '')}`
+      }));
+
+      // Where to splice in the break columns: after period index 2 (Recess) and index 5 (Lunch)
+      const BREAKS = { 2: 'Recess · 10:30–10:50', 5: 'Lunch · 1:20–2:30' };
+
+      function timetableRow(dayName) {
+        const classes = SCHEDULE[dayName] || [];
+        const covered = new Array(PERIODS.length).fill(false);
+        const cells = new Array(PERIODS.length).fill(null);
+
+        for (let i = 0; i < PERIODS.length; i++) {
+          if (covered[i]) continue;
+          const cls = classes.find(c => (to12hParts(c.start).h * 60 + to12hParts(c.start).m) === PERIODS[i].startMin);
+          if (!cls) { cells[i] = { span: 1, empty: true }; continue; }
+
+          const endMin = to12hParts(cls.end).h * 60 + to12hParts(cls.end).m;
+          let span = 1, j = i;
+          while (PERIODS[j].endMin !== endMin && j < PERIODS.length - 1) {
+            j++; span++; covered[j] = true;
+          }
+          cells[i] = { span, code: cls.code, teacher: cls.teacher };
+        }
+        return cells;
+      }
+
+      function renderTimetable() {
+        const order = ['Saturday','Sunday','Monday','Tuesday','Wednesday'];
+        const today = DAY_NAMES[new Date().getDay()];
+        const table = document.getElementById('timetableGrid');
+
+        const headCells = PERIODS.map((p, i) =>
+          `<th>${p.label}</th>${BREAKS[i] !== undefined ? `<th class="break-col">${BREAKS[i].split(' · ')[0]}</th>` : ''}`
+        ).join('');
+
+        const thead = `<thead><tr><th class="day-col-head">Day</th>${headCells}</tr></thead>`;
+
+        const rows = order.map(dayName => {
+          const cells = timetableRow(dayName);
+          let rowHTML = `<td class="day-col${dayName === today ? ' is-today' : ''}">${dayName}</td>`;
+          cells.forEach((cell, i) => {
+            if (cell) {
+              const spanAttr = cell.span > 1 ? ` colspan="${cell.span}"` : '';
+              rowHTML += cell.empty
+                ? `<td class="tt-cell"${spanAttr}><span class="tt-empty">—</span></td>`
+                : `<td class="tt-cell has-class"${spanAttr}><span class="tt-code">${cell.code}</span><span class="tt-teacher">${cell.teacher}</span></td>`;
+            }
+            if (BREAKS[i] !== undefined) {
+              rowHTML += `<td class="break-col">${BREAKS[i].split(' · ')[0]}</td>`;
+            }
+          });
+          return `<tr class="${dayName === today ? 'is-today-row' : ''}">${rowHTML}</tr>`;
+        }).join('');
+
+        table.innerHTML = thead + `<tbody>${rows}</tbody>`;
+      }
+
       /* ---------- Swipeable Yesterday/Today/Tomorrow carousel ---------- */
       const track     = document.getElementById('carouselTrack');
       const carousel  = document.getElementById('routineCarousel');
@@ -2437,6 +2630,7 @@
         if (renderedOnce) return;
         buildTrack();
         renderWeekGrid();
+        renderTimetable();
         renderedOnce = true;
       }
 
